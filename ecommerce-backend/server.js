@@ -16,10 +16,10 @@ app.get("/api/categories", (req, res) => {
   res.json(categories);
 });
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
-app.listen(PORT, '127.0.0.1', () => {
-  console.log(`🚀 Server running on http://127.0.0.1:${PORT}`);
-  console.log(`📦 Products: http://127.0.0.1:${PORT}/api/products`);
-  console.log(`📂 Categories: http://127.0.0.1:${PORT}/api/categories`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Server running on http://0.0.0.0:${PORT}`);
+  console.log(`📦 Products: http://0.0.0.0:${PORT}/api/products`);
+  console.log(`📂 Categories: http://0.0.0.0:${PORT}/api/categories`);
 });
