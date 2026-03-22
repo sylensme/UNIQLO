@@ -6,7 +6,7 @@ const Sidebar = ({ onCategorySelect, selectedCategory }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5001/api/products");
+        const response = await fetch("https://uniqlo.onrender.com/api/products");
         const data = await response.json();
         const uniqueCategories = [...new Set(data.map(p => p.category))];
         setCategories(uniqueCategories);
